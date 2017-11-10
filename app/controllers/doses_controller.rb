@@ -7,19 +7,7 @@ class DosesController < ApplicationController
       redirect_to cocktail_path(@cocktail)
     else
       redirect_to cocktail_path(@cocktail)
-    end
-  end
-
-  def edit
-    @dose = Dose.find(params[:id])
-  end
-
-  def update
-    @dose = Dose.find(params[:id])
-    if @dose.update_attributes(doses_params)
-      redirect_to cocktail_path(@dose.cocktail)
-    else
-      render 'edit'
+      render 'cocktails/show'
     end
   end
 
